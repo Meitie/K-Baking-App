@@ -1,0 +1,13 @@
+# Get local ip
+ip route get 1.2.3.4 | awk '{print $7}'
+
+# Get specific quote; replace {id} with an integer
+curl --request GET 'http://192.168.0.101:5000/quote/{id}' --include
+
+# Get all quotes
+curl --request GET 'http://192.168.0.101:5000/quotes' --include
+
+# Create a quote; replace {body} and {author} with text
+curl --request POST 'http://192.168.0.101:5000/quotes' -d '{
+         "body": "Meow.",
+         "author": "Cat" }'--include
